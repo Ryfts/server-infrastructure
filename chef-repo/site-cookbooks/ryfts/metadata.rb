@@ -1,0 +1,16 @@
+name 'ryfts'
+maintainer 'Dino Lukman'
+maintainer_email 'dino.lukman@gmail.com'
+license 'All Rights Reserved'
+description 'Installs/Configures ryfts'
+long_description 'Installs/Configures ryfts'
+version '0.1.0'
+chef_version '>= 12.1' if respond_to?(:chef_version)
+
+supports 'ubuntu'
+depends 'acme'
+depends 'bitcoin'
+depends 'nginx'
+depends 'openssl'
+depends 'sc-mongodb'
+depends 'users'

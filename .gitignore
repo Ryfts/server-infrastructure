@@ -1,0 +1,21 @@
+# Chef
+chef-repo/cookbooks/*
+chef-repo/site-cookbooks/*/.kitchen/*
+chef-repo/site-cookbooks/*/.kitchen.local.yml
+chef-repo/site-cookbooks/*/.delivery
+chef-repo/syntaxcache/*
+.vagrant
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+
+# Bundler
+.bundle/*
+vendor/bundle/*
+
+# Terraform
+terraform/.terraform/*
+terraform/*.tfstate*
