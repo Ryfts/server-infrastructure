@@ -4,6 +4,16 @@
 users_manage 'deploy' do
 end
 
+# Add nodejs source repo and install
+execute 'install_nodejs' do
+  command 'curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -'
+end
+
+# Required packages
+%w[build-essential libsasl2-dev].each do |pkg|
+  package pkg
+end
+
 include_recipe 'acme::default'
 
 directory File.dirname(node['ryfts']['nginx']['ssl']['cert']) do
