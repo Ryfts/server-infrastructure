@@ -108,6 +108,10 @@ resource "aws_instance" "ryfts-app" {
   tags {
     Name = "ryfts-app"
   }
+  root_block_device {
+    volume_size = "200"
+    volume_type = "gp2"
+  }
   subnet_id = "${aws_subnet.ryfts.id}"
   associate_public_ip_address = true
 
