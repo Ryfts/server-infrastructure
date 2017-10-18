@@ -1,0 +1,878 @@
+{
+  "name": "ip-10-0-1-96",
+  "override": {
+    "mongodb": {
+      "package_name": "mongodb-org"
+    }
+  },
+  "normal": {
+    "knife_zero": {
+      "host": "ryfts-host"
+    },
+    "tags": [
+
+    ]
+  },
+  "default": {
+    "acme": {
+      "contact": "mailto:dino.lukman@gmail.com",
+      "endpoint": "https://acme-v01.api.letsencrypt.org",
+      "renew": 30,
+      "source_ips": [
+        "66.133.109.36",
+        "64.78.149.164"
+      ],
+      "private_key": null,
+      "gem_deps": true,
+      "key_size": 2048
+    },
+    "bitcoin": {
+      "variant": "core",
+      "user": "bitcoin",
+      "home": "/home/bitcoin",
+      "conf_dir": "/home/bitcoin/.bitcoin",
+      "conf_file": "/home/bitcoin/.bitcoin/bitcoin.conf",
+      "service_file": "/usr/lib/systemd/system/bitcoind.service",
+      "archive_file": ".tar.gz",
+      "archive_path": "/var/chef/cache/bitcoin/.tar.gz",
+      "extract_path": "/var/chef/cache/bitcoin/",
+      "prefix": "/usr/local",
+      "bitcoind": "/usr/local/bin/bitcoind",
+      "bitcoin_cli": "/usr/local/bin/bitcoin-cli",
+      "checkblocks": 288,
+      "binary": {
+        "version": {
+          "core": "0.14.2",
+          "unlimited": "1.0.3.0",
+          "classic": "1.3.6",
+          "abc": "0.15.0"
+        },
+        "url": {
+          "core": "https://bitcoin.org/bin/bitcoin-core-0.14.2/bitcoin-0.14.2-x86_64-linux-gnu.tar.gz",
+          "unlimited": "https://www.bitcoinunlimited.info/downloads/bitcoinUnlimited-1.0.3.0-linux64.tar.gz",
+          "classic": "https://github.com/bitcoinclassic/bitcoinclassic/releases/download/v1.3.6/bitcoin-1.3.6-linux64.tar.gz",
+          "abc": "https://download.bitcoinabc.org/0.15.0/linux/bitcoin-abc-0.15.0-x86_64-linux-gnu.tar.gz"
+        },
+        "checksum": {
+          "core": "20acc6d5d5e0c4140387bc3445b8b3244d74c1c509bd98f62b4ee63bec31a92b",
+          "unlimited": "a6658bac22f082539969a243943c7d1a865abd40cdfe39465ff82b4eba387b22",
+          "classic": "311c636f400d84b1bc615f6c1a1b48837d1dd04bd78615a7e0b7bd3c86d53aea",
+          "abc": "de8ec283d6d3bb15545b39dc07f3207d7502d51dd98cfeac79e8d78462808cfc"
+        }
+      },
+      "package": {
+        "repo_url": {
+          "rhel": "https://linux.ringingliberty.com/bitcoin/el7/x86_64/bitcoin-release-3-1.noarch.rpm",
+          "fedora": "https://linux.ringingliberty.com/bitcoin/f23/x86_64/bitcoin-release-3-1.noarch.rpm"
+        },
+        "repo_checksum": {
+          "rhel": "450481b2ff04579ca109a90b3ce4399ea75b917b8398dc7f9baccceea7578631",
+          "fedora": "ab6f4fd8f5f7875303e6b068b1bb3e1632b1f94bb3ad900777b37f7a0b7dce46"
+        }
+      },
+      "source": {
+        "version": {
+          "core": "v0.14.2",
+          "unlimited": "1.0.3.0",
+          "classic": "1.3.6",
+          "abc": "0.15.0"
+        },
+        "url": {
+          "core": "https://github.com/bitcoin/bitcoin/archive/v0.14.2.tar.gz",
+          "unlimited": "https://github.com/BitcoinUnlimited/BitcoinUnlimited/archive/v1.0.3.0.tar.gz",
+          "classic": "https://github.com/bitcoinclassic/bitcoinclassic/archive/v1.3.6.tar.gz",
+          "abc": "https://download.bitcoinabc.org/0.15.0/linux/src/bitcoin-abc-0.15.0.tar.gz"
+        },
+        "checksum": {
+          "core": "e0ac23f01a953fcc6290c96799deeffb32aa76ca8e216c564d20c18e75a25219",
+          "unlimited": "27f4d0b6c2148aefd981479f15d950f58709a42639a9ebf8cefee80b6a82ec0a",
+          "classic": "b5ad0706ce62fd75fd16c0c1c019b1e2e644143b92f1a80542f0c84da0d33cf6",
+          "abc": "ae1efb25068fa6ae910650b3d84a308e395d55264e95dc6d7f1d2e939bc9219f"
+        },
+        "dependencies": {
+          "debian": [
+            "build-essential",
+            "libtool",
+            "autoconf",
+            "pkg-config",
+            "libssl-dev",
+            "libevent-dev",
+            "libboost-system-dev",
+            "libboost-filesystem-dev",
+            "libboost-chrono-dev",
+            "libboost-program-options-dev",
+            "libboost-test-dev",
+            "libboost-thread-dev",
+            "libboost-system-dev",
+            "libboost-test-dev",
+            "libboost-thread-dev"
+          ],
+          "rhel": [
+            "gcc-c++",
+            "libtool",
+            "make",
+            "autoconf",
+            "automake",
+            "openssl-devel",
+            "libevent-devel",
+            "boost-devel"
+          ],
+          "freebsd": "autoconf automake libtool pkgconf gmake boost-all openssl"
+        },
+        "configure_options": "--with-gui=no --disable-wallet --without-miniupnpc --disable-zmq --disable-tests --prefix=/usr/local",
+        "make_options": "-j1"
+      }
+    },
+    "windows": {
+      "rubyzipversion": null
+    },
+    "seven_zip": {
+      "url": "http://www.7-zip.org/a/7z1514-x64.msi",
+      "checksum": "cefe1a9092d8a6be68468c33910d6206b40e934fb63cab686c5cccf369fbf712",
+      "package_name": "7-Zip 15.14 (x64 edition)",
+      "default_extract_timeout": 600
+    },
+    "build-essential": {
+      "compile_time": false,
+      "msys2": {
+        "path": "\\msys2"
+      }
+    },
+    "yum-epel": {
+      "repos": [
+        "epel",
+        "epel-debuginfo",
+        "epel-source",
+        "epel-testing",
+        "epel-testing-debuginfo",
+        "epel-testing-source"
+      ]
+    },
+    "yum": {
+      "epel-debuginfo": {
+        "repositoryid": "epel-debuginfo",
+        "description": "Extra Packages for 16 - $basearch - Debug",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-source": {
+        "repositoryid": "epel-source",
+        "description": "Extra Packages for 16 - $basearch - Source",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-source-16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing-debuginfo": {
+        "repositoryid": "epel-testing-debuginfo",
+        "description": "Extra Packages for 16 - $basearch - Testing Debug",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-debug-epel16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing-source": {
+        "repositoryid": "epel-testing-source",
+        "description": "Extra Packages for 16 - $basearch - Testing Source",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-source-epel16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing": {
+        "repositoryid": "epel-testing",
+        "description": "Extra Packages for 16 - $basearch - Testing ",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel": {
+        "repositoryid": "epel",
+        "description": "Extra Packages for 16 - $basearch",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-16&arch=$basearch",
+        "gpgkey": "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-16",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "managed": true,
+        "make_cache": true
+      },
+      "main": {
+        "cachedir": "/var/cache/yum/$basearch/$releasever",
+        "distroverpkg": "ubuntu-release",
+        "releasever": null,
+        "alwaysprompt": null,
+        "assumeyes": null,
+        "bandwidth": null,
+        "bugtracker_url": null,
+        "clean_requirements_on_remove": null,
+        "color": null,
+        "color_list_available_downgrade": null,
+        "color_list_available_install": null,
+        "color_list_available_reinstall": null,
+        "color_list_available_upgrade": null,
+        "color_list_installed_extra": null,
+        "color_list_installed_newer": null,
+        "color_list_installed_older": null,
+        "color_list_installed_reinstall": null,
+        "color_search_match": null,
+        "color_update_installed": null,
+        "color_update_local": null,
+        "color_update_remote": null,
+        "commands": null,
+        "deltarpm": null,
+        "debuglevel": null,
+        "diskspacecheck": null,
+        "enable_group_conditionals": null,
+        "errorlevel": null,
+        "exactarch": null,
+        "exclude": null,
+        "gpgcheck": true,
+        "group_package_types": null,
+        "groupremove_leaf_only": null,
+        "history_list_view": null,
+        "history_record": null,
+        "history_record_packages": null,
+        "http_caching": null,
+        "installonly_limit": null,
+        "installonlypkgs": null,
+        "installroot": null,
+        "keepalive": null,
+        "keepcache": false,
+        "kernelpkgnames": null,
+        "localpkg_gpgcheck": false,
+        "logfile": "/var/log/yum.log",
+        "max_retries": null,
+        "mdpolicy": null,
+        "metadata_expire": null,
+        "mirrorlist_expire": null,
+        "multilib_policy": null,
+        "obsoletes": null,
+        "overwrite_groups": null,
+        "password": null,
+        "path": "/etc/yum.conf",
+        "persistdir": null,
+        "pluginconfpath": null,
+        "pluginpath": null,
+        "plugins": null,
+        "protected_multilib": null,
+        "protected_packages": null,
+        "proxy": null,
+        "proxy_password": null,
+        "proxy_username": null,
+        "recent": null,
+        "repo_gpgcheck": null,
+        "reposdir": null,
+        "reset_nice": null,
+        "rpmverbosity": null,
+        "showdupesfromrepos": null,
+        "skip_broken": null,
+        "ssl_check_cert_permissions": null,
+        "sslcacert": null,
+        "sslclientcert": null,
+        "sslclientkey": null,
+        "sslverify": null,
+        "syslog_device": null,
+        "syslog_facility": null,
+        "syslog_ident": null,
+        "throttle": null,
+        "timeout": null,
+        "tolerant": false,
+        "tsflags": null,
+        "username": null
+      }
+    },
+    "zypper": {
+      "smt_host": null
+    },
+    "nginx": {
+      "version": "1.12.1",
+      "package_name": "nginx",
+      "port": "80",
+      "dir": "/etc/nginx",
+      "script_dir": "/usr/sbin",
+      "log_dir": "/var/log/nginx",
+      "log_dir_perm": "0750",
+      "binary": "/usr/sbin/nginx",
+      "default_root": "/var/www/nginx-default",
+      "ulimit": "1024",
+      "cleanup_runit": true,
+      "repo_source": "nginx",
+      "install_method": "package",
+      "user": "deploy",
+      "upstart": {
+        "runlevels": "2345",
+        "respawn_limit": null,
+        "foreground": true
+      },
+      "group": "www-data",
+      "gzip": "on",
+      "gzip_static": "off",
+      "gzip_http_version": "1.0",
+      "gzip_comp_level": "2",
+      "gzip_proxied": "any",
+      "gzip_vary": "off",
+      "gzip_buffers": null,
+      "gzip_types": [
+        "text/plain",
+        "text/css",
+        "application/x-javascript",
+        "text/xml",
+        "application/xml",
+        "application/rss+xml",
+        "application/atom+xml",
+        "image/svg+xml",
+        "text/javascript",
+        "application/javascript",
+        "application/json",
+        "text/mathml"
+      ],
+      "gzip_min_length": 1000,
+      "gzip_disable": "MSIE [1-6]\\.",
+      "keepalive": "on",
+      "keepalive_requests": 100,
+      "keepalive_timeout": 65,
+      "worker_processes": 1,
+      "worker_connections": 1024,
+      "worker_rlimit_nofile": null,
+      "multi_accept": false,
+      "event": null,
+      "accept_mutex_delay": null,
+      "server_tokens": "off",
+      "server_names_hash_bucket_size": "1024",
+      "variables_hash_max_size": 1024,
+      "variables_hash_bucket_size": 64,
+      "sendfile": "on",
+      "underscores_in_headers": null,
+      "tcp_nodelay": "on",
+      "tcp_nopush": "on",
+      "access_log_options": null,
+      "error_log_options": null,
+      "disable_access_log": false,
+      "log_formats": {
+
+      },
+      "default_site_enabled": false,
+      "types_hash_max_size": 2048,
+      "types_hash_bucket_size": 64,
+      "proxy_read_timeout": null,
+      "client_body_buffer_size": null,
+      "client_max_body_size": null,
+      "large_client_header_buffers": null,
+      "default": {
+        "modules": [
+
+        ]
+      },
+      "extra_configs": {
+
+      },
+      "load_modules": [
+
+      ],
+      "auth_request": {
+        "url": "http://mdounin.ru/hg/ngx_http_auth_request_module/archive/662785733552.tar.gz",
+        "checksum": "2057bdefd2137a5000d9dbdbfca049d1ba7832ad2b9f8855a88ea5dfa70bd8c1"
+      },
+      "devel": {
+        "version": "0.3.0",
+        "url": "https://github.com/simpl/ngx_devel_kit/archive/v0.3.0.tar.gz",
+        "checksum": "88e05a99a8a7419066f5ae75966fb1efc409bad4522d14986da074554ae61619"
+      },
+      "echo": {
+        "version": "0.61",
+        "url": "https://github.com/openresty/echo-nginx-module/archive/v0.61.tar.gz",
+        "checksum": "2e6a03032555f5da1bdff2ae96c96486f447da3da37c117e0f964ae0753d22aa"
+      },
+      "geoip": {
+        "path": "/srv/geoip",
+        "enable_city": true,
+        "country_dat_url": "http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz",
+        "country_dat_checksum": null,
+        "city_dat_url": "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz",
+        "city_dat_checksum": null,
+        "lib_version": "1.6.9",
+        "lib_url": "https://github.com/maxmind/geoip-api-c/releases/download/v1.6.9/GeoIP-1.6.9.tar.gz",
+        "lib_checksum": "4b446491843de67c1af9b887da17a3e5939e0aeed4826923a5f4bf09d845096f"
+      },
+      "headers_more": {
+        "version": "0.30",
+        "source_url": "https://github.com/openresty/headers-more-nginx-module/archive/v0.30.tar.gz",
+        "source_checksum": "2aad309a9313c21c7c06ee4e71a39c99d4d829e31c8b3e7d76f8c964ea8047f5"
+      },
+      "lua": {
+        "version": "0.10.10",
+        "url": "https://github.com/chaoslawful/lua-nginx-module/archive/v0.10.10.tar.gz",
+        "checksum": "b4acb84e2d631035a516d61830c910ef6e6485aba86096221ec745e0dbb3fbc9"
+      },
+      "luajit": {
+        "version": "2.0.4",
+        "url": "http://luajit.org/download/LuaJIT-2.0.4.tar.gz",
+        "checksum": "620fa4eb12375021bef6e4f237cbd2dd5d49e56beb414bee052c746beef1807d"
+      },
+      "naxsi": {
+        "version": "0.54",
+        "url": "https://github.com/nbs-system/naxsi/archive/0.54.tar.gz",
+        "checksum": "9cc2c09405bc71f78ef26a8b6d70afcea3fccbe8125df70cb0cfc480133daba5"
+      },
+      "openssl_source": {
+        "version": "1.0.2k",
+        "url": "http://www.openssl.org/source/openssl-1.0.2k.tar.gz"
+      },
+      "pagespeed": {
+        "version": "1.11.33.2",
+        "url": "https://github.com/pagespeed/ngx_pagespeed/archive/release-1.11.33.2-beta.tar.gz",
+        "packages": {
+          "rhel": [
+            "pcre-devel",
+            "zlib-devel"
+          ],
+          "debian": [
+            "zlib1g-dev",
+            "libpcre3",
+            "libpcre3-dev"
+          ]
+        }
+      },
+      "psol": {
+        "url": "https://dl.google.com/dl/page-speed/psol/1.11.33.2.tar.gz"
+      },
+      "passenger": {
+        "version": "4.0.57",
+        "root": "/gems/passenger-4.0.57",
+        "ruby": null,
+        "packages": {
+          "rhel": [
+            "ruby-devel",
+            "curl-devel"
+          ],
+          "fedora": [
+            "ruby-devel",
+            "libcurl-devel"
+          ],
+          "debian": [
+            "ruby-dev",
+            "libcurl4-gnutls-dev"
+          ]
+        },
+        "install_rake": true,
+        "spawn_method": "smart-lv2",
+        "buffer_response": "on",
+        "max_pool_size": 6,
+        "min_instances": 1,
+        "max_instances_per_app": 0,
+        "pool_idle_time": 300,
+        "max_requests": 0,
+        "gem_binary": null,
+        "show_version_in_header": "on",
+        "passenger_log_file": null,
+        "nodejs": null
+      },
+      "enable_rate_limiting": false,
+      "rate_limiting_zone_name": "default",
+      "rate_limiting_backoff": "10m",
+      "rate_limit": "1r/s",
+      "upstream_repository": "https://nginx.org/packages/ubuntu",
+      "repo_signing_key": "https://nginx.org/keys/nginx_signing.key",
+      "set_misc": {
+        "version": "0.30",
+        "url": "https://github.com/agentzh/set-misc-nginx-module/archive/v0.30.tar.gz",
+        "checksum": "59920dd3f92c2be32627121605751b52eae32b5884be09f2e4c53fb2fae8aabc"
+      },
+      "socketproxy": {
+        "root": "/usr/share/nginx/apps",
+        "app_owner": "root",
+        "logname": "socketproxy",
+        "log_level": "error"
+      },
+      "init_style": "systemd",
+      "source": {
+        "version": "1.12.2",
+        "prefix": "/opt/nginx-1.12.2",
+        "conf_path": "/etc/nginx/nginx.conf",
+        "sbin_path": "/opt/nginx-1.12.2/sbin/nginx",
+        "default_configure_flags": [
+          "--prefix=/opt/nginx-1.12.2",
+          "--conf-path=/etc/nginx/nginx.conf",
+          "--sbin-path=/opt/nginx-1.12.2/sbin/nginx",
+          "--with-cc-opt=\"-Wno-error\""
+        ],
+        "url": "http://nginx.org/download/nginx-1.12.2.tar.gz",
+        "checksum": "8793bf426485a30f91021b6b945a9fd8a84d87d17b566562c3797aba8fac76fb",
+        "modules": [
+          "nginx::http_ssl_module",
+          "nginx::http_gzip_static_module"
+        ],
+        "use_existing_user": false
+      },
+      "configure_flags": [
+
+      ],
+      "status": {
+        "port": "8090"
+      },
+      "syslog": {
+        "git_repo": "https://github.com/yaoweibin/nginx_syslog_patch.git",
+        "git_revision": "master"
+      },
+      "upload_progress": {
+        "url": "https://github.com/masterzen/nginx-upload-progress-module/tarball/v0.9.0",
+        "checksum": "3fb903dab595cf6656fa0fc5743a48daffbba2f6b5c554836be630800eaad4e2",
+        "javascript_output": true,
+        "zone_name": "proxied",
+        "zone_size": "1m"
+      }
+    },
+    "openssl": {
+      "restart_services": [
+
+      ]
+    },
+    "apt": {
+      "cacher_dir": "/var/cache/apt-cacher-ng",
+      "cacher_interface": null,
+      "cacher_port": 3142,
+      "compiletime": false,
+      "compile_time_update": false,
+      "key_proxy": "",
+      "periodic_update_min_delay": 86400,
+      "launchpad_api_version": "1.0",
+      "unattended_upgrades": {
+        "enable": false,
+        "update_package_lists": true,
+        "allowed_origins": [
+          "Ubuntu xenial"
+        ],
+        "origins_patterns": [
+
+        ],
+        "package_blacklist": [
+
+        ],
+        "auto_fix_interrupted_dpkg": false,
+        "minimal_steps": false,
+        "install_on_shutdown": false,
+        "mail": null,
+        "mail_only_on_error": true,
+        "remove_unused_dependencies": false,
+        "automatic_reboot": false,
+        "automatic_reboot_time": "now",
+        "dl_limit": null,
+        "random_sleep": null
+      },
+      "cacher_client": {
+        "cacher_server": {
+
+        }
+      },
+      "confd": {
+        "force_confask": false,
+        "force_confdef": false,
+        "force_confmiss": false,
+        "force_confnew": false,
+        "force_confold": false,
+        "install_recommends": true,
+        "install_suggests": false
+      }
+    },
+    "mongodb": {
+      "client_roles": [
+
+      ],
+      "cluster_name": null,
+      "shard_name": "default",
+      "replica_arbiter_only": false,
+      "replica_build_indexes": true,
+      "replica_hidden": false,
+      "replica_slave_delay": 0,
+      "replica_priority": 1,
+      "replica_tags": {
+
+      },
+      "replica_votes": 1,
+      "auto_configure": {
+        "replicaset": true,
+        "sharding": true
+      },
+      "configserver_url": null,
+      "root_group": "root",
+      "user": "mongodb",
+      "group": "mongodb",
+      "init_dir": "/etc/init.d",
+      "init_script_template": "debian-mongodb.init.erb",
+      "sysconfig_file": {
+        "mongod": "/etc/default/mongodb",
+        "mongos": "/etc/default/mongos",
+        "template": "mongodb.sysconfig.erb"
+      },
+      "dbconfig_file": {
+        "template": "mongodb.conf.erb",
+        "mongod": "/etc/mongod.conf",
+        "mongos": "/etc/mongos.conf"
+      },
+      "package_name": "mongodb",
+      "package_version": "3.2.10",
+      "default_init_name": "mongod",
+      "instance_name": {
+        "mongod": "mongod",
+        "mongos": "mongos"
+      },
+      "packager_options": "-o Dpkg::Options::=\"--force-confold\" --force-yes",
+      "install_method": "mongodb-org",
+      "is_replicaset": null,
+      "is_shard": null,
+      "is_configserver": null,
+      "reload_action": "restart",
+      "repo": "http://repo.mongodb.org/apt/ubuntu",
+      "template_cookbook": "sc-mongodb",
+      "key_file_content": null,
+      "ruby_gems": {
+        "mongo": "~> 1.12",
+        "bson_ext": null
+      },
+      "config": {
+        "mongod": {
+          "net": {
+            "port": 27017,
+            "bindIp": "0.0.0.0"
+          },
+          "systemLog": {
+            "destination": "file",
+            "logAppend": true,
+            "path": "/var/log/mongodb/mongod.log"
+          },
+          "storage": {
+            "journal": {
+              "enabled": true
+            },
+            "dbPath": "/var/lib/mongodb",
+            "engine": "wiredTiger"
+          },
+          "replication": {
+            "oplogSizeMB": null,
+            "replSetName": null,
+            "secondaryIndexPrefetch": null,
+            "enableMajorityReadConcern": null
+          },
+          "security": {
+            "keyFile": null
+          }
+        },
+        "mongos": {
+          "net": {
+            "port": 27017,
+            "bindIp": "0.0.0.0"
+          },
+          "systemLog": {
+            "destination": "file",
+            "logAppend": true,
+            "path": "/var/log/mongodb/mongos.log"
+          },
+          "sharding": {
+            "configDB": null
+          },
+          "security": {
+            "keyFile": null
+          }
+        }
+      },
+      "mms_agent": {
+        "api_key": null,
+        "mmsGroupId": null,
+        "user": "mongodb-mms-agent",
+        "group": "mongodb-mms-agent",
+        "automation": {
+          "config": {
+            "mmsGroupId": null,
+            "mmsApiKey": null,
+            "mmsBaseUrl": "https://mms.mongodb.com",
+            "logFile": "/var/log/mongodb-mms-automation/automation-agent.log",
+            "mmsConfigBackup": "/var/lib/mongodb-mms-automation/mms-cluster-config-backup.json",
+            "logLevel": "INFO",
+            "maxLogFiles": 10,
+            "maxLogFileSize": 268435456
+          },
+          "user": "mongodb",
+          "group": "mongodb",
+          "package_url": "https://cloud.mongodb.com/download/agent/automation/mongodb-mms-automation-agent-manager_latest_amd64.ubuntu1604.deb"
+        },
+        "backup": {
+          "config": {
+            "mmsApiKey": null,
+            "mothership": "api-backup.mongodb.com",
+            "https": true
+          },
+          "user": "mongodb-mms-agent",
+          "group": "mongodb-mms-agent",
+          "package_url": "https://cloud.mongodb.com/download/agent/backup/mongodb-mms-backup-agent_latest_amd64.ubuntu1604.deb"
+        },
+        "monitoring": {
+          "config": {
+            "mmsApiKey": null,
+            "mmsBaseUrl": "https://mms.mongodb.com"
+          },
+          "user": "mongodb-mms-agent",
+          "group": "mongodb-mms-agent",
+          "package_url": "https://cloud.mongodb.com/download/agent/monitoring/mongodb-mms-monitoring-agent_latest_amd64.ubuntu1604.deb"
+        }
+      },
+      "sysconfig": {
+        "mongod": {
+          "DAEMON": "/usr/bin/$NAME",
+          "DAEMON_USER": "mongodb",
+          "DAEMON_OPTS": "--config /etc/mongod.conf",
+          "CONFIGFILE": "/etc/mongod.conf",
+          "ENABLE_MONGODB": "yes"
+        },
+        "mongos": {
+          "DAEMON": "/usr/bin/$NAME",
+          "DAEMON_USER": "mongodb",
+          "DAEMON_OPTS": "--config /etc/mongos.conf",
+          "CONFIGFILE": "/etc/mongos.conf",
+          "ENABLE_MONGODB": "yes"
+        }
+      },
+      "ulimit": {
+        "fsize": "unlimited",
+        "cpu": "unlimited",
+        "as": "unlimited",
+        "nofile": 64000,
+        "rss": "unlimited",
+        "nproc": 32000
+      },
+      "authentication": {
+        "username": "admin",
+        "password": "admin"
+      },
+      "admin": {
+        "username": "admin",
+        "password": "admin",
+        "roles": [
+          "userAdminAnyDatabase",
+          "dbAdminAnyDatabase",
+          "clusterAdmin"
+        ],
+        "database": "admin"
+      },
+      "users": [
+
+      ],
+      "mongos_create_admin": false,
+      "user_management": {
+        "connection": {
+          "retries": 2,
+          "delay": 2
+        }
+      },
+      "mongod_create_user": {
+        "retries": 2,
+        "delay": 10
+      }
+    },
+    "ryfts": {
+      "nginx": {
+        "ssl": {
+          "cert": "/etc/ssl/ryfts.io/ryfts.crt.pem",
+          "cert_key": "/etc/ssl/ryfts.io/ryfts.key.pem",
+          "trusted_cert": "/etc/ssl/ryfts.io/ca.pem",
+          "dhparam": "/etc/ssl/certs/dhparam.pem"
+        },
+        "proxy_pass": "http://localhost:3000",
+        "server_name": "ryfts.io",
+        "ocsp_ca": "https://letsencrypt.org/certs/isrg-root-ocsp-x1.pem.txt"
+      }
+    }
+  },
+  "automatic": {
+    "os": "linux",
+    "os_version": "4.4.0-1035-aws",
+    "hostname": "ip-10-0-1-96",
+    "ipaddress": "10.0.1.96",
+    "roles": [
+
+    ],
+    "recipes": [
+      "ryfts",
+      "ryfts::default",
+      "ryfts::bootstrap",
+      "acme::default",
+      "ryfts::nginx",
+      "nginx::default",
+      "nginx::package",
+      "nginx::ohai_plugin",
+      "nginx::repo",
+      "nginx::commons",
+      "nginx::commons_dir",
+      "nginx::commons_script",
+      "nginx::commons_conf",
+      "ryfts::certificate",
+      "ryfts::mongodb",
+      "sc-mongodb::default",
+      "sc-mongodb::install",
+      "sc-mongodb::mongodb_org_repo",
+      "ryfts::bitcoin",
+      "bitcoin::binary",
+      "bitcoin::_common",
+      "bitcoin::_systemd"
+    ],
+    "platform": "ubuntu",
+    "platform_version": "16.04",
+    "cloud": {
+      "public_ipv4_addrs": [
+        "13.228.169.14"
+      ],
+      "local_ipv4_addrs": [
+        "10.0.1.96"
+      ],
+      "provider": "ec2",
+      "public_hostname": "",
+      "local_hostname": "ip-10-0-1-96.ap-southeast-1.compute.internal",
+      "public_ipv4": "13.228.169.14",
+      "local_ipv4": "10.0.1.96"
+    },
+    "cloud_v2": {
+      "public_ipv4_addrs": [
+        "13.228.169.14"
+      ],
+      "local_ipv4_addrs": [
+        "10.0.1.96"
+      ],
+      "provider": "ec2",
+      "public_hostname": "",
+      "local_hostname": "ip-10-0-1-96.ap-southeast-1.compute.internal",
+      "public_ipv4": "13.228.169.14",
+      "local_ipv4": "10.0.1.96"
+    },
+    "chef_packages": {
+      "ohai": {
+        "version": "13.5.0",
+        "ohai_root": "/opt/chef/embedded/lib/ruby/gems/2.4.0/gems/ohai-13.5.0/lib/ohai"
+      },
+      "chef": {
+        "version": "13.5.3",
+        "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.4.0/gems/chef-13.5.3/lib"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[ryfts]"
+  ]
+}
